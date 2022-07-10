@@ -1,7 +1,7 @@
-package models;
+package sep2.models;
 
-import contracts.UserModel;
-import entities.User;
+import sep2.contracts.UserModel;
+import sep2.entities.User;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package entities;
+package sep2.entities;
 
 public class User {
 
@@ -17,7 +17,7 @@ public class User {
     //Contact
     private String email;
     private String address;
-    private int zipcode;
+    private String zipcode;
 
     public User() {
     }
@@ -40,7 +40,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public User(int userID, String username, String password,boolean isAdmin, String firstNane, String lastName, char gender, String phoneNumber, String email, String address, int zipcode) {
+    public User(int userID, String username, String password,boolean isAdmin, String firstNane, String lastName, char gender, String phoneNumber, String email, String address, String zipcode) {
         this.userID = userID;
         this.username = username;
         this.password = password;
@@ -107,7 +107,16 @@ public class User {
     }
 
     public void setGender(char gender) {
-        this.gender = gender;
+        switch (gender){
+            case 'm','M':
+                this.gender='M';
+                break;
+            case 'f','F':
+                this.gender='F';
+                break;
+            default:
+                System.out.println("Expected: M/F given argument: "+gender);
+        }
     }
 
     public String getPhoneNumber() {
@@ -134,13 +143,14 @@ public class User {
         this.address = address;
     }
 
-    public int getZipcode() {
+    public String getZipcode() {
         return zipcode;
     }
 
-    public void setZipcode(int zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
 
     @Override
     public String toString() {

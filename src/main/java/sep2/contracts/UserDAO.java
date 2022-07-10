@@ -1,6 +1,6 @@
-package contracts;
+package sep2.contracts;
 
-import entities.User;
+import sep2.entities.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 public interface UserDAO {
     //For login
     User getUserByUsername(String username) throws IOException;
-    //Usual use
-    User getUserById(int id);
 
+    //User accessible functions
+    User getUserById(int id);
     List<User> getAllUsers() throws IOException;
 
     //Normal user functions

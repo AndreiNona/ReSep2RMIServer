@@ -1,4 +1,4 @@
-package entities;
+package sep2.entities;
 
 public class Trainer {
 
@@ -8,8 +8,9 @@ public class Trainer {
     private String password;
     private boolean isAdmin;
 
+    //Contact
     private String email;
-    private Sheduel sheduel;
+    private Scheduled scheduled;
 
     public Trainer() {
     }
@@ -19,16 +20,16 @@ public class Trainer {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        this.sheduel = new Sheduel();
+        this.scheduled = new Scheduled();
     }
 
-    public Trainer(int trainerID, String username, String password, boolean isAdmin, String email, Sheduel sheduel) {
+    public Trainer(int trainerID, String username, String password, boolean isAdmin, String email, Scheduled scheduled) {
         this.trainerID = trainerID;
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
         this.email = email;
-        this.sheduel = sheduel;
+        this.scheduled = scheduled;
     }
 
     public int getTrainerID() {
@@ -71,12 +72,12 @@ public class Trainer {
         this.email = email;
     }
 
-    public Sheduel getSheduel() {
-        return sheduel;
+    public Scheduled getSheduel() {
+        return scheduled;
     }
 
-    public void setSheduel(Sheduel sheduel) {
-        this.sheduel = sheduel;
+    public void setSheduel(Scheduled scheduled) {
+        this.scheduled = scheduled;
     }
 
     @Override
@@ -87,7 +88,7 @@ public class Trainer {
                 ", password='" + password + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", email='" + email + '\'' +
-                ", sheduel=" + sheduel +
+                ", sheduel=" + scheduled +
                 '}';
     }
 }
