@@ -1,5 +1,8 @@
 package sep2.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Trainer {
 
     //For system
@@ -10,7 +13,8 @@ public class Trainer {
 
     //Contact
     private String email;
-    private Scheduled scheduled;
+    private List<Date> scheduled;
+
 
     public Trainer() {
     }
@@ -20,10 +24,10 @@ public class Trainer {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        this.scheduled = new Scheduled();
+        this.scheduled = new ArrayList<>();
     }
 
-    public Trainer(int trainerID, String username, String password, boolean isAdmin, String email, Scheduled scheduled) {
+    public Trainer(int trainerID, String username, String password, boolean isAdmin, String email, List<Date> scheduled) {
         this.trainerID = trainerID;
         this.username = username;
         this.password = password;
@@ -72,11 +76,11 @@ public class Trainer {
         this.email = email;
     }
 
-    public Scheduled getSheduel() {
+    public List<Date> getScheduled() {
         return scheduled;
     }
 
-    public void setSheduel(Scheduled scheduled) {
+    public void setScheduled(List<Date> scheduled) {
         this.scheduled = scheduled;
     }
 
@@ -88,7 +92,7 @@ public class Trainer {
                 ", password='" + password + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", email='" + email + '\'' +
-                ", sheduel=" + scheduled +
+                ", scheduled=" + scheduled +
                 '}';
     }
 }

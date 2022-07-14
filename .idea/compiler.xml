@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ReSep2 RMIServer" />
+        <module name="ReSep2RMIServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ReSep2 RMIServer" target="18" />
+      <module name="ReSep2RMIServer" target="18" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,10 +1,12 @@
 package sep2.daos;
 
 import sep2.contracts.UserDAO;
+import sep2.entities.Date;
 import sep2.entities.User;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
@@ -46,10 +48,13 @@ public class UserDAOImpl implements UserDAO {
                     String lName = resultSet.getString("lName");
                     String email = resultSet.getString("email");
                     String phone = resultSet.getString("phone");
+                    //Query needs to be done from a joint table
+                    //Consider making a table of available dates with a foreign key of the User and trainer ID assigned to it (all dates are assigned a trainer by default, unsure how to do when it comes to users)
+                    List<Date> tSes = new ArrayList<>();
                     char gender = resultSet.getString("gender").charAt(0); //Probably does not work
                     String address  = resultSet.getString("address");
                     String zipCode  = resultSet.getString("zipCode");
-                    userFound = new User(userID, username, password, isAdmin, fName, lName, gender, phone, email, address, zipCode);
+                    userFound = new User(userID, username, password, isAdmin, fName, lName, gender, phone,tSes, email, address, zipCode);
                 }
 
             }
@@ -79,10 +84,12 @@ public class UserDAOImpl implements UserDAO {
                     String lName = resultSet.getString("lName");
                     String email = resultSet.getString("email");
                     String phone = resultSet.getString("phone");
+                    //Query needs to be done from a joint table
+                    List<Date> tSes = new ArrayList<>();
                     char gender = resultSet.getString("gender").charAt(0); //Probably does not work
                     String address  = resultSet.getString("address");
                     String zipCode  = resultSet.getString("zipCode");
-                    userFound = new User(userID, userName, password, isAdmin, fName, lName, gender, phone, email, address, zipCode);
+                    userFound = new User(userID, userName, password, isAdmin, fName, lName, gender, phone,tSes, email, address, zipCode);
                 }
             }
         } catch (SQLException e) {

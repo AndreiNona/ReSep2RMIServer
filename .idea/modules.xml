@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ReSep2 RMIServer.iml" filepath="$PROJECT_DIR$/ReSep2 RMIServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReSep2RMIServer.iml" filepath="$PROJECT_DIR$/ReSep2RMIServer.iml" />
     </modules>
   </component>
 </project>
