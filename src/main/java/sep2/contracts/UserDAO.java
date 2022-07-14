@@ -12,9 +12,9 @@ public interface UserDAO {
     //User accessible functions
     User getUserById(int id);
     List<User> getAllUsers() throws IOException;
+    void addUser(User user) ;
 
     //Normal user functions
-    void addUser(User user) ;
     void deleteUserById(int id);
     void updateUser(User user);
 }

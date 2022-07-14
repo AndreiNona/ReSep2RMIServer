@@ -13,9 +13,9 @@ public interface UserModel {
     //User accessible functions
     User getUserById(int id);
     List<User> getAllUsers() throws IOException;
+    void addUser(User user) ;
 
     //Admin asset functions
-    void addUser(User user) ;
     void deleteUserById(int id);
     void updateUser(User user);
 
