@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee79b74-2e15-48bd-bde6-771fe4987c7f" name="Changes" comment="Added date, changed entities to reflect the updated project structure">
+    <list default="true" id="dee79b74-2e15-48bd-bde6-771fe4987c7f" name="Changes" comment="Changes to DAO and model classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/contracts/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/contracts/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/contracts/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/contracts/UserModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sep2/daos/AssetDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/daos/AssetDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sep2/daos/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/daos/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/entities/Scheduled.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/entities/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/models/ModelAsset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/models/ModelAsset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/entities/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/entities/Asset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/entities/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/entities/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/entities/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/entities/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sep2/entities/Trainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/entities/Trainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sep2/models/ModelUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sep2/models/ModelUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,8 @@
       <updated>1657433308361</updated>
       <workItem from="1657433310127" duration="2042000" />
       <workItem from="1657436142226" duration="5468000" />
-      <workItem from="1657787833389" duration="8261000" />
+      <workItem from="1657787833389" duration="9207000" />
+      <workItem from="1658821356203" duration="2629000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1657436563986</created>
@@ -89,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657792973352</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changes to DAO and model classes">
+      <created>1657797686682</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657797686682</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +118,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Maven and basic database connection added" />
     <MESSAGE value="Added date, changed entities to reflect the updated project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added date, changed entities to reflect the updated project structure" />
+    <MESSAGE value="Changes to DAO and model classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to DAO and model classes" />
   </component>
 </project>

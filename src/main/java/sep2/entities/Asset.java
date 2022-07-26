@@ -1,5 +1,8 @@
 package sep2.entities;
-
+/**
+ * @author Andrei-Sorin Ioanas
+ * Object used to stor information about sellable items
+ */
 public class Asset {
 
     private int assetID;
@@ -9,9 +12,19 @@ public class Asset {
 
     private double value;
 
+    /**
+     * Empty constructor
+     */
     public Asset() {
     }
 
+    /**
+     * Full constructor
+     * @param assetID int of unique ID of a asset (for database lookup)
+     * @param name string containing the name of the sellable asset
+     * @param description string containing a short description of the asset
+     * @param value double containing the value of the asset
+     */
     public Asset(int assetID, String name, String description, double value) {
         this.assetID = assetID;
         this.name = name;

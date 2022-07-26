@@ -2,7 +2,10 @@ package sep2.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author Andrei-Sorin Ioanas
+ * Object used to store information about the trainer
+ */
 public class Trainer {
 
     //For system
@@ -15,10 +18,19 @@ public class Trainer {
     private String email;
     private List<Date> scheduled;
 
-
+    /**
+     * Empty constructor
+     */
     public Trainer() {
     }
 
+    /**
+     * Minimum constructor
+     * @param trainerID int of unique ID of a trainer (for database lookup)
+     * @param username string Username for logging in
+     * @param password string Password for logging in
+     * @param isAdmin boolean value determining if the user is an admin or not (feature only used for testing privileges but should be expanded for premium users)
+     */
     public Trainer(int trainerID, String username, String password, boolean isAdmin) {
         this.trainerID = trainerID;
         this.username = username;
@@ -27,6 +39,15 @@ public class Trainer {
         this.scheduled = new ArrayList<>();
     }
 
+    /**
+     * Full consturctor
+     * @param trainerID int of unique ID of a trainer (for database lookup)
+     * @param username string Username for logging in
+     * @param password string Password for logging in
+     * @param isAdmin boolean value determining if the user is an admin or not (feature only used for testing privileges but should be expanded for premium users)
+     * @param email string of email address associated with the trainer
+     * @param scheduled List of the trainer's booked days
+     */
     public Trainer(int trainerID, String username, String password, boolean isAdmin, String email, List<Date> scheduled) {
         this.trainerID = trainerID;
         this.username = username;

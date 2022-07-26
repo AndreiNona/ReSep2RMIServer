@@ -9,13 +9,25 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Andrei-Sorin Ioanas
+ */
 public class UserDAOImpl implements UserDAO {
     private static UserDAOImpl instance;
 
+    /**
+     *
+     * @throws SQLException
+     */
     private UserDAOImpl() throws SQLException {
         DriverManager.registerDriver(new org.postgresql.Driver());
     }
 
+    /**
+     * Singleton used to get only one instance of the database
+     * @return instance of the database
+     * @throws SQLException
+     */
     public static synchronized UserDAOImpl getInstance() throws SQLException {
         if (instance == null) {
             instance = new UserDAOImpl();
@@ -23,10 +35,21 @@ public class UserDAOImpl implements UserDAO {
         return instance;
     }
 
+    /**
+     * Method used to connect to postgres (requires in code user and password, that match the existing ones in the running device)
+     * @return Connection
+     * @throws SQLException
+     */
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:postgresql://localhost:5432/database_sep2", "postgres", "1234");
     }
 
+    /**
+     * Method used for getting a user based on the username. Should only be used at login as the UserID is unavailable, any other search should use UserID if possible
+     * @param username string containing a username to be looked up in the database
+     * @return User item that matches usernames with the search parameter, in case of no match returns null
+     * @throws IOException
+     */
     @Override
     public User getUserByUsername(String username) throws IOException {
         User userFound = null;
@@ -61,12 +84,18 @@ public class UserDAOImpl implements UserDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null; //If there is no user to be returned the server will crash
         }
 
         System.out.println(userFound.toString());
         return userFound;
     }
 
+    /**
+     * Main method for looking up users
+     * @param id contains the int value of the userID to be returned from the database
+     * @return User item that matches ID with the search parameter, in case of no match returns null
+     */
     @Override
     public User getUserById(int id) {
         User userFound = null;
@@ -94,11 +123,17 @@ public class UserDAOImpl implements UserDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return null; //If there is no user to be returned the server will crash
         }
 
         return userFound;
     }
 
+    /**
+     * Method used for getting all users from the database
+     * @return List of all the users contained in the database
+     * @throws IOException
+     */
     @Override
     public List<User> getAllUsers() throws IOException {
         List<User> usersFound = new ArrayList<>();
@@ -133,6 +168,10 @@ public class UserDAOImpl implements UserDAO {
         return usersFound;
     }
 
+    /**
+     * Method used for adding users to the database
+     * @param user User to be added to the database (note ID needs to be unique)
+     */
     @Override
     public void addUser(User user) {
         User result = null;
@@ -165,6 +204,10 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+    /**
+     * Method used for deleting users from the database
+     * @param id contains the int value of the user to be searched and deleted from the database
+     */
     @Override
     public void deleteUserById(int id) {
         try(Connection connection = getConnection()) {
@@ -176,6 +219,10 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+    /**
+     * Method used to update all data fields in a given user object
+     * @param user User object that replaces the current user entry in the database
+     */
     @Override
     public void updateUser(User user) {
         try(Connection connection = getConnection()) {

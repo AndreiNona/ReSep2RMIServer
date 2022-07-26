@@ -20,17 +20,22 @@ public class ModelUser implements UserModel {
     }
     @Override
     public User getUserByUsername(String username) throws IOException {
-        return null;
+        if(validateUsername(username))
+        return userDAO.getUserByUsername(username);
+        else return null;
     }
 
     @Override
     public User getUserById(int id) {
-        return null;
+        if(id>=1)
+            return userDAO.getUserById(id);
+        else
+            return null;
     }
 
     @Override
     public List<User> getAllUsers() throws IOException {
-        return null;
+        return userDAO.getAllUsers();
     }
 
     //As a user, I want to be able to create my own account
@@ -41,12 +46,19 @@ public class ModelUser implements UserModel {
 
     @Override
     public void deleteUserById(int id) {
-
+        if(id>=1)
+             userDAO.deleteUserById(id);
     }
 
     @Override
     public void updateUser(User user) {
-
+    userDAO.updateUser(user);
     }
-
+ private boolean validateUsername(String username){
+        if(username.length()<=3)
+            return false;
+        if (username.contains(" "))
+            return false;
+        return true;
+ }
 }

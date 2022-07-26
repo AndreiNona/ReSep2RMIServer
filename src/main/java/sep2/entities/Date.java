@@ -62,7 +62,7 @@ public class Date
     /**
      * Use to check of a date is before ot after the current date
      * @implNote Same date is considered false
-     * @param date2 Date to be checked agains the current date
+     * @param date2 Date to be checked against the current date
      * @return boolean value ture if the current date is before the argument and false if contrary
      */
     //
